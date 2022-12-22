@@ -1,4 +1,3 @@
-/* Importrerar nodemodulen express (installerad med npm), som är ett utbrett verktyg för att skapa och arbeta med webbservrar och hantera HTTP-förfrågningar i ett nodejs-backend. */
 const express = require('express');
 /* Skapar upp ett express-objekt, som i stort representerar en webbserver */
 const app = express();
