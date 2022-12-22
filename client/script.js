@@ -94,18 +94,16 @@ function renderList() {
 function renderTask({ id, title, description, dueDate, completed }) {
   const itemStatus = completed == true ? "Checked" : " ";
   const itemDone = completed == true ? "rounded-md bg-black/50  " : " ";
-  let html = `
-    <li class="select-none mt-2 py-2 border-b border-amber-300">
-      <div class="flex items-center">
-      
-      <input type="checkbox" value="${id}" onclick="updateItem(${id})" ${itemStatus}>
-      
-      
 
-      <h3 class="mb-2 flex-1 text-xl font-bold my-1 ml-2 text-pink-700 normal-case">${title}</h3>
+  
+  let html = `
+    <li class="select-none mt-2 py-2 border-b border-slate-500">
+      <div class="flex items-center">
+      <input type="checkbox" value="${id}" onclick="updateItem(${id})" ${itemStatus}>
+      <h3 class="mb-2 flex-1 text-xl font-bold my-1 ml-2 text-pink-500 normal-case ${completed ? 'line-through text-gray-400' : ''}">${title}</h3>
         <div>
           <span>${dueDate}</span>
-          <button onclick="deleteTask(${id})" class="inline-block bg-amber-500 text-xs text-amber-900 border border-white px-3 py-1 rounded-md ml-2">Ta bort</button>
+          <button onclick="deleteTask(${id})" class="inline-block bg-sky-500 hover:bg-sky-700 text-xs text-white border border-white px-3 py-1 rounded-md ml-2">Ta bort</button>
         </div>
       </div>`;
 
@@ -120,6 +118,7 @@ function renderTask({ id, title, description, dueDate, completed }) {
   return html;
 }
 /*-------------------------MIN KOD---------------------------------- */
+
 /**UPDATE */
 function updateItem(id) {
   api.update(id).then((result) => {
@@ -151,6 +150,7 @@ function sortCompleted(tasks) {
     }
   });
 }
+
 /*-------------------------------------------------------------------- */
 
 function deleteTask(id) {
