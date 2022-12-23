@@ -99,7 +99,9 @@ function renderTask({ id, title, description, dueDate, completed }) {
   let html = `
     <li class="select-none mt-2 py-2 border-b border-slate-500">
       <div class="flex items-center">
-      <input type="checkbox" value="${id}" onclick="updateItem(${id})" ${itemStatus}>
+      
+      <input type="checkbox" value="${id}" onclick="updateItem(${id})" class="accent-sky-800 cursor-pointer" ${itemStatus}>
+
       <h3 class="mb-2 flex-1 text-xl font-bold my-1 ml-2 text-pink-500 normal-case ${completed ? 'line-through text-gray-400' : ''}">${title}</h3>
         <div>
           <span>${dueDate}</span>
