@@ -66,7 +66,6 @@ app.delete('/tasks/:id', async (req, res) => {
     res.status(500).send({ error: error.stack });
   }
 });
-/**------------------------------------------MIN KOD---------------------------------------- */
 
 app.put('/tasks/:id', async(req,res) => {
   try {
@@ -91,8 +90,6 @@ app.put('/tasks/:id', async(req,res) => {
   }
 }); 
 
-
-/**------------------------------------------MIN KOD---------------------------------------- */
 
 
 app.listen(PORT, () => console.log('Server running on http://localhost:5000'));

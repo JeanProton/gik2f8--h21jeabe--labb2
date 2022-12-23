@@ -119,15 +119,14 @@ function renderTask({ id, title, description, dueDate, completed }) {
 
   return html;
 }
-/*-------------------------MIN KOD---------------------------------- */
 
-/**UPDATE */
+
 function updateItem(id) {
   api.update(id).then((result) => {
     renderList();
   });
 }
-/**Sort on date */
+
 function sortOnDate(tasks) {
   tasks.sort((a, b) => {
     if (a.dueDate < b.dueDate){
@@ -153,7 +152,6 @@ function sortCompleted(tasks) {
   });
 }
 
-/*-------------------------------------------------------------------- */
 
 function deleteTask(id) {
   api.remove(id).then((result) => {
